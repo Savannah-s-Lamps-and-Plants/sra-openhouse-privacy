@@ -61,10 +61,26 @@
     font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   }
   footer { margin-top: 3em; padding-top: 1.2em; border-top: 1px solid var(--rule); color: var(--muted); font-size: 0.88rem; }
+  footer a { color: var(--muted); }
+  .topnav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 6px 18px; margin: 0 0 2.4em; padding-bottom: 14px; border-bottom: 1px solid var(--rule); }
+  .topnav .brand { font-weight: 700; color: var(--fg); text-decoration: none; font-size: 1.02rem; }
+  .topnav .navlinks a { color: var(--muted); text-decoration: none; margin-left: 18px; font-size: 0.95rem; }
+  .topnav .navlinks a:first-child { margin-left: 0; }
+  .topnav .navlinks a:hover { color: var(--accent); }
+  .topnav .navlinks a[aria-current="page"] { color: var(--accent); font-weight: 650; }
 </style>
 </head>
 <body>
 <div class="wrap">
+
+  <div class="topnav">
+    <a class="brand" href="home.html">OpenHouse Lead Capture</a>
+    <div class="navlinks">
+      <a href="home.html">Home</a>
+      <a href="support.html">Support</a>
+      <a href="index.html" aria-current="page">Privacy</a>
+    </div>
+  </div>
 
   <h1>Privacy Policy</h1>
   <p class="meta">
