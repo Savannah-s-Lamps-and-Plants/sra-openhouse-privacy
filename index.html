@@ -85,15 +85,20 @@
   <h1>Privacy Policy</h1>
   <p class="meta">
     OpenHouse Lead Capture<br>
-    Effective date: June 16, 2026 &middot; Last updated: June 16, 2026
+    Effective date: June 16, 2026 &middot; Last updated: June 25, 2026
   </p>
 
   <p>
     This Privacy Policy explains how the <strong>OpenHouse Lead Capture</strong> app
     ("the App," "we," "us") handles information. The App is published by
-    <strong>Savannah's Lamps and Plants</strong> and is used by real estate agents to run an
-    open-house sign-in kiosk that collects visitor contact details and submits them to
-    the agent's customer relationship management (CRM) system, <strong>Follow Up Boss</strong>.
+    <strong>Savannah's Lamps and Plants</strong>, is available for
+    <strong>iOS (Apple App Store)</strong> and <strong>Android (Google Play)</strong>, and is
+    used by real estate agents to run an open-house sign-in kiosk that collects visitor
+    contact details and submits them to the agent's customer relationship management (CRM)
+    system, <strong>Follow Up Boss</strong>.
+  </p>
+  <p>
+    Where data practices differ between the iOS and Android versions, this policy says so explicitly.
   </p>
 
   <h2>1. Two kinds of users</h2>
@@ -128,12 +133,26 @@
 
   <h3>Information accessed on the device</h3>
   <ul>
-    <li><strong>Location (when in use):</strong> With the Agent's permission, the App can read the device's location <strong>on the device only</strong> to auto-fill the property address during setup. Location is used transiently to look up a nearby address and is <strong>not stored or transmitted</strong> by the App as location data.</li>
-    <li><strong>Face ID / Touch ID (biometrics):</strong> Used to unlock the App's Settings screen. Biometric authentication is performed entirely by Apple on the device; the App never receives or stores biometric data.</li>
+    <li><strong>Location (when in use):</strong> With the Agent's permission, the App can read the device's location <strong>on the device only</strong> to auto-fill the property address during setup. Location is used transiently to look up a nearby address (via the device's on-device/OS geocoder) and is <strong>not stored or transmitted</strong> by the App as location data.</li>
+    <li><strong>Biometric / device-lock authentication:</strong> Used to unlock the App's Settings screen. This uses <strong>Face ID / Touch ID</strong> on iOS and the device biometric prompt (fingerprint or face unlock, with a PIN / pattern / passcode fallback) on Android. Authentication is performed entirely by the operating system on the device; the App never receives or stores biometric data.</li>
+    <li><strong>Notifications (Android):</strong> On Android 13 and later, the App may request permission to show <strong>local</strong> notifications that remind the Agent when Visitor submissions are still waiting to upload. These notifications are generated on the device. The App does <strong>not</strong> use push messaging and does not send Agent or Visitor data to a messaging service.</li>
+  </ul>
+
+  <h3>Usage and diagnostic data (Android version only)</h3>
+  <p>On Android, the App uses <strong>Google Firebase</strong> services that automatically collect limited app-usage and diagnostic information:</p>
+  <ul>
+    <li><strong>Firebase Analytics</strong> automatically collects aggregate usage and diagnostic data — for example an app-instance identifier, in-app events and screen views, session and engagement data, and approximate device characteristics (device model, operating-system version, and coarse region inferred from IP address). This is used to understand how the kiosk is used and to improve reliability. It does <strong>not</strong> include Visitor contact details (name, email, or phone).</li>
+    <li><strong>Firebase App Check (Play Integrity)</strong> sends a device-/app-integrity token to Google to verify that requests come from a genuine, unmodified copy of the App.</li>
   </ul>
   <p>
+    This data is processed by Google in accordance with
+    <a href="https://policies.google.com/privacy">Google's Privacy Policy</a> and
+    <a href="https://firebase.google.com/support/privacy">Firebase data-handling terms</a>.
+    The <strong>iOS version of the App does not include analytics or these Firebase services.</strong>
+  </p>
+  <p>
     We do <strong>not</strong> collect advertising identifiers, and we do <strong>not</strong>
-    track Visitors or Agents across other companies' apps or websites.
+    track Visitors or Agents across other companies' apps or websites for advertising.
   </p>
 
   <h2>3. How information is used</h2>
@@ -141,22 +160,25 @@
     <li><strong>Visitor information</strong> is used solely to create a contact and sign-in event in the Agent's <strong>Follow Up Boss</strong> account so the Agent can follow up with the Visitor.</li>
     <li><strong>Agent configuration</strong> is used to operate the kiosk and to authenticate requests to Follow Up Boss.</li>
     <li><strong>Location</strong> is used only to help the Agent fill in the property address during setup.</li>
+    <li><strong>Usage and diagnostic data</strong> (Android only) is used to understand kiosk usage, diagnose problems, and protect the App from abuse, as described in Section 2.</li>
   </ul>
   <p>We do not use this information for advertising, profiling, or any purpose unrelated to the open-house sign-in function.</p>
 
   <h2>4. How information is stored and shared</h2>
   <ul>
     <li><strong>Follow Up Boss (third party):</strong> Visitor information is transmitted over an encrypted (HTTPS) connection to Follow Up Boss, the Agent's CRM. Follow Up Boss processes this data under its own privacy policy and the Agent's account terms.</li>
-    <li><strong>On-device storage:</strong> If the device is offline, Visitor submissions are saved locally on the device and submitted automatically once connectivity returns. The Agent can review, edit, delete, or export (as CSV) these locally stored submissions from the Settings screen.</li>
-    <li><strong>Apple iCloud (key-value sync):</strong> The App uses Apple's iCloud key-value store to sync the Agent's <strong>configuration</strong> (property details, welcome message, custom questions) across the Agent's own Apple devices. <strong>Visitor contact data is not synced through iCloud.</strong></li>
-    <li><strong>Apple App Store / standard system services:</strong> Standard Apple services apply when the App is downloaded and run.</li>
+    <li><strong>On-device storage:</strong> If the device is offline, Visitor submissions are saved locally on the device (in the App's protected storage) and submitted automatically once connectivity returns. The Agent can review, edit, delete, or export (as CSV) these locally stored submissions from the Settings screen.</li>
+    <li><strong>Google (Firebase) (Android only):</strong> As described in Section 2, the Android version sends aggregate usage/diagnostic data and an app-integrity token to Google. Google acts as a processor for this data.</li>
+    <li><strong>Apple iCloud (iOS only — configuration sync):</strong> On iOS, the App uses Apple's iCloud key-value store to sync the Agent's <strong>configuration</strong> (property details, welcome message, custom questions) across the Agent's own Apple devices. <strong>Visitor contact data is not synced through iCloud.</strong> The Android version does <strong>not</strong> sync configuration across devices through the App.</li>
+    <li><strong>Device cloud backup (Android — Auto Backup):</strong> On Android, if the Agent has Android Backup ("Backup by Google One" / Auto Backup) enabled in the device settings, Android may include the App's local data in the device's encrypted backup to the <strong>Agent's own Google Drive</strong>. This can include the Agent's configuration and any <strong>offline Visitor submissions that are still waiting to upload</strong> to Follow Up Boss. This backup is controlled entirely by the Agent's device and Google-account settings, is tied to the Agent's account, and can be disabled by the Agent in Android settings. Once a Visitor submission has been uploaded and cleared from the device, it is no longer part of this backup.</li>
+    <li><strong>App stores / standard system services:</strong> Standard Apple App Store and Google Play services apply when the App is downloaded, installed, and run.</li>
   </ul>
   <p>We do <strong>not</strong> sell personal information, and we do <strong>not</strong> share it with third parties other than as described above and as needed to operate the App.</p>
 
   <h2>5. Security</h2>
   <ul>
-    <li>The Follow Up Boss API key is stored in the device <strong>Keychain</strong>, not in plain storage.</li>
-    <li>The App's Settings screen is protected by <strong>Face ID / Touch ID</strong> (or the device passcode).</li>
+    <li>The Follow Up Boss API key is stored in protected storage, not in plain text — the device <strong>Keychain</strong> on iOS, and <strong>encrypted storage protected by the Android Keystore</strong> on Android.</li>
+    <li>The App's Settings screen is protected by device authentication — <strong>Face ID / Touch ID</strong> on iOS and the biometric/device-lock prompt (with PIN / pattern / passcode fallback) on Android.</li>
     <li>Data transmitted to Follow Up Boss is sent over <strong>HTTPS</strong>.</li>
   </ul>
   <p>
@@ -170,6 +192,8 @@
   <ul>
     <li><strong>On the device:</strong> Locally stored offline submissions remain until they are successfully submitted to Follow Up Boss or are deleted by the Agent.</li>
     <li><strong>In Follow Up Boss:</strong> Once submitted, Visitor data is retained and managed by the Agent within Follow Up Boss according to the Agent's own practices and Follow Up Boss's policies.</li>
+    <li><strong>In device backups (Android):</strong> Where Android Auto Backup is enabled (see Section 4), copies of the App's on-device data in the Agent's Google Drive backup are retained and rotated by Google/Android according to the device and Google-account backup settings.</li>
+    <li><strong>Usage/diagnostic data (Android):</strong> Firebase Analytics data is retained by Google according to the project's configured retention period and Google's Firebase data-handling terms.</li>
   </ul>
   <p>The App itself does not operate a separate server or database that retains Visitor information beyond the device and the Agent's CRM.</p>
 
